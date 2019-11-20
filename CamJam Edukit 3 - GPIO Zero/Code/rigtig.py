@@ -7,8 +7,8 @@ from gpiozero import CamJamKitRobot
 
 
 from simple_pid import PID
-pid = PID(1, 0.5, 0, setpoint=0.50)
-pid.output_limits = (-0.2,0.1)
+pid = PID(2, 0.5, 0, setpoint=0.50)
+pid.output_limits = (-0.1,0.1)
 
 # Set the relative speeds of the two motors, between 0.0 and 1.0
 leftmotorspeed = 1.0
@@ -32,17 +32,17 @@ try:
     while True:
         #print("Distance: %.1f cm" % sensor.distance * 100)
 
-        #control = pid(sensor.distance)
+        control = pid(sensor.distance)
         ##print(control)
         
-        if (sensor.distance < 0.50):
-            turnA=0.05
-        else:
-            turnA=-0.05
+        #if (sensor.distance < 0.50):
+        #    turnA=0.05
+        #else:
+        #    turnA=-0.05
 
 
 
-        #turnA=control
+        turnA=control
 
         leftmotorspeed=0.9*( 0.5*turnA+0.5)
         rightmotorspeed=0.9*(-0.5*turnA+0.5)
