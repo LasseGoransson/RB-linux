@@ -20,7 +20,11 @@ The scripts are started via RC.local at startup.
 
 
 The robot accepts the following commands:
-echo "start" | socat - tcp:192.168.99.4:8080 - Start the robot
-echo "stop" | socat - tcp:192.168.99.4:8080 - Stops the robot
-echo "getDist" | socat - tcp:192.168.99.4:8080 - Returns the measurement from ultrasound sensor
-echo "getMotors" | socat - tcp:192.168.99.4:8080 - Returns the motor values Left and Right respectively.
+
+ - echo "start" | socat - tcp:192.168.99.4:8080 - Start the robot
+
+ - echo "stop" | socat - tcp:192.168.99.4:8080 - Stops the robot
+
+ - echo "getDist" | socat - tcp:192.168.99.4:8080 - Returns the measurement from ultrasound sensor
+ 
+ - echo "getMotors" | socat - tcp:192.168.99.4:8080 - Returns the motor values Left and Right respectively.
